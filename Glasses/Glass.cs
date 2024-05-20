@@ -81,14 +81,10 @@ public class Glass
         /*Metod som returnerar det totala inflödet i glaset som funktion av utflödet från glasen.
         utflödet är noll om glaset inte är fyllt (när volymen av vätska = 10).*/
         double outFlow;
-        if (VolumeOfliquid > 10)
+        if (VolumeOfliquid >= 10)
         {
             outFlow = (VolumeOfliquid - 10 + InFlow()) / 2;
             VolumeOfliquid = 10;
-        }
-        else if (VolumeOfliquid == 10)
-        {
-            outFlow = InFlow() / 2;
         }
         else
         {
